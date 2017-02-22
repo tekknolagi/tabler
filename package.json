@@ -1,0 +1,24 @@
+{
+  "name": "tabler",
+  "version": "0.0.1",
+  "description": "Make pretty tables with hidden data.",
+  "main": "tabler.js",
+  "dependencies": {},
+  "devDependencies": {
+      "flow-bin": "^0.39.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "flow": "flow; test $? -eq 0 -o $? -eq 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tekknolagi/tabler.git"
+  },
+  "author": "Maxwell Bernstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tekknolagi/tabler/issues"
+  },
+  "homepage": "https://github.com/tekknolagi/tabler#readme"
+}
