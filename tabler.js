@@ -6,7 +6,7 @@ function Tabler (columnNames, rows) {
             var el = document.createElement(tag);
             el.innerText = contents;
             return el;
-        }
+        };
 
         var setCSS = function(el, dict) {
             for (var key in dict) {
@@ -15,20 +15,22 @@ function Tabler (columnNames, rows) {
                 }
             }
             return el;
-        }
+        };
+
+        var isArray = function (o) {
+            return Object.prototype.toString.call(o) === '[object Array]';
+        };
 
         var table = document.createElement("table");
-        setCSS(table, {
-            "border": "1px #6699CC solid",
-            // "border-collapse": "collapse",
-            "border-spacing": "0px",
-            "font-family": "monospace"
-        });
+        setCSS(table, { "font-family": "monospace" });
 
         var headerRow = document.createElement("tr");
         var maketh = function(name) {
-            return setCSS(elementWithContents("th", name),
-                          {"padding": "3px", "text-align": "center"});
+            return setCSS(elementWithContents("th", name), {
+                          "padding": "3px",
+                          "text-align": "center",
+                          "text-transform": "uppercase"
+                   });
         };
         var ths = columnNames.map(maketh);
         for (var i = 0; i < ths.length; i++) {
@@ -43,11 +45,20 @@ function Tabler (columnNames, rows) {
 
             for (var j = 0; j < rows[i].length; j++) {
                 var cell = rows[i][j];
+                if (!isArray(cell)) {
+                    cell = [cell, ""];
+                }
+                else if (cell.length == 1) {
+                    cell.push("");
+                }
+                else if (cell.length == 0) {
+                    console.error("Need cell of at least 1 element.");
+                }
                 var text = cell[0];
                 var clicktext = cell[1];
                 var td = document.createElement("td");
                 var id = uniqueID + "-" + "row-" + i + "-" + j;
-                td.style.setProperty("padding", "3px");
+                setCSS(td, {"padding": "3px"});
                 td.addEventListener("click", function() {
                     var el = document.getElementById(this.id);
                     if (!el) {

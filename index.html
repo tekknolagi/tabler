@@ -2,11 +2,18 @@
     table tr.tabler-row:hover td {
         background-color: #eee;
     }
+    table {
+        border: 1px #6699CC solid;
+        border-spacing: 0px;
+    }
 </style>
 <script type="text/javascript" src="tabler.js"></script>
 <script type="text/javascript">
-    var rows = [[["row1", "clicktext 1"], ["row1", "clicktext 2"]],
-                [["row2", "clicktext 2"], ["row2", "clicktext 2"]]];
+    var rows = [
+        ["your", "mom", "haha"],
+        [["row1", "clicktext 1"], ["row1", "clicktext 2"]],
+        [["row2", "clicktext 2"], ["row2", "clicktext 2"]],
+    ];
     var table =
         Tabler(["my", "headers", "lolidk"], rows)
         .addRow([["hello", "world"], ["your", "mom"]]);
