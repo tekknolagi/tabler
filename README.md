@@ -2,7 +2,7 @@
 
 ## API
 
-### `type cell = string | string list
+### `type cell = string | string list`
 
 Each cell is either:
 
