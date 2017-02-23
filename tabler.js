@@ -52,28 +52,30 @@ function Tabler (columnNames, rows) {
                     cell.push("");
                 }
                 else if (cell.length == 0) {
-                    console.error("Need cell of at least 1 element.");
+                    cell = ["", ""];
                 }
                 var text = cell[0];
                 var clicktext = cell[1];
                 var td = document.createElement("td");
                 var id = uniqueID + "-" + "row-" + i + "-" + j;
                 setCSS(td, {"padding": "3px"});
-                td.addEventListener("click", function() {
-                    var el = document.getElementById(this.id);
-                    if (!el) {
-                        console.error("Null element somehow!");
-                        return;
-                    }
-                    if (el.getAttribute("ishidden") == "false") {
-                        el.style.setProperty("display", "none");
-                        el.setAttribute("ishidden", "true");
-                    }
-                    else {
-                        el.style.removeProperty("display");
-                        el.setAttribute("ishidden", "false");
-                    }
-                }.bind({"id": id}), false);
+                if (clicktext != "") {
+                    td.addEventListener("click", function() {
+                        var el = document.getElementById(this.id);
+                        if (!el) {
+                            console.error("Null element somehow!");
+                            return;
+                        }
+                        if (el.getAttribute("ishidden") == "false") {
+                            el.style.setProperty("display", "none");
+                            el.setAttribute("ishidden", "true");
+                        }
+                        else {
+                            el.style.removeProperty("display");
+                            el.setAttribute("ishidden", "false");
+                        }
+                    }.bind({"id": id}), false);
+                }
 
                 var clicktextElement = elementWithContents("div", clicktext);
                 setCSS(clicktextElement, {"background-color": "#eee", "display": "none"});
