@@ -23,6 +23,9 @@ Add a row to the table.
 Generate an HTML element (I think this is the right type) that can be appended
 to the DOM.
 
+## Usage
+
+See [index.html](index.html).
 
 ## License
 
