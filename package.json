@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "description": "Make pretty tables with hidden data.",
   "main": "tabler.js",
-  "dependencies": {},
+  "dependencies": {
+      "bs-platform": "1.4.3",
+      "ninja": "3.0.8"
+  },
   "devDependencies": {
       "flow-bin": "^0.39.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "build" : "bsb",
+    "watch" : "bsb -w"
   },
   "repository": {
     "type": "git",

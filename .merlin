@@ -1,0 +1,8 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx /home/max/Documents/code/tabler/node_modules/bs-platform/bin/bsppx.exe
+S /home/max/Documents/code/tabler/node_modules/bs-platform/lib/ocaml
+B /home/max/Documents/code/tabler/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -w -40+6+7+27+32..39+44+45
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}
